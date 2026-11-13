@@ -725,13 +725,12 @@
     if (closeWelcome) closeWelcome.addEventListener("click", hideWelcome);
 
     if (explorePortfolio) {
-        explorePortfolio.addEventListener("click", () => {
-            hideWelcome();
-            const work = document.getElementById("work");
-            if (work) work.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth" });
-        });
-    }
-
+    explorePortfolio.addEventListener("click", () => {
+        hideWelcome();
+        const about = document.getElementById("about");
+        if (about) about.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth" });
+    });
+}
     // ============================================
     // 10. KEYBOARD
     // ============================================
@@ -796,7 +795,6 @@ const reviewCount = document.getElementById("reviewCount");
 const reviewListCount = document.getElementById("reviewListCount");
 const reviewNotice = document.getElementById("reviewNotice");
 
-const REVIEW_STORAGE_KEY = "omkarPortfolioReviews";
 
 // Get saved reviews
 function getReviews() {
